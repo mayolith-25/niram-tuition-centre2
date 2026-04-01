@@ -1,865 +1,914 @@
-/* Niram Tuition Centre - Academic Royal Theme */
+/* ============================================================
+   NIRAM TUITION CENTRE - Microsoft Windows 2000 Style Theme
+   ============================================================ */
 
 :root {
-    /* Color Palette - Royal Academic Theme */
-    --clr-navy: #0B1F3A;        /* Primary / Deep Navy */
-    --clr-maroon: #5A0F1C;      /* Secondary / Dark Maroon */
-    --clr-gold: #C9A14A;        /* Accent / Gold */
-    --clr-gold-light: #e0b452;  /* Gold Hover */
-    --clr-cream: #F5F1E8;       /* Primary Background */
-    --clr-white: #FFFFFF;
-    --clr-text-dark: #1F2937;   /* Charcoal for readable text instead of pitch black */
-    --clr-text-muted: #4b5563;  /* Subtitles, secondary text */
-    
-    /* Typography */
-    --font-heading: 'Playfair Display', serif;
-    --font-body: 'Inter', sans-serif;
-    
-    /* Variables */
-    --spacing-section: 5rem 2rem;
-    --radius-sm: 4px;
-    --radius-md: 8px;
-    --radius-lg: 16px;
-    
-    /* Animation Speeds */
-    --transition-fast: 200ms ease;
-    --transition-smooth: 300ms ease-out;
-    --transition-slow: 600ms ease;
+    --win-bg:         #D4D0C8;   /* Classic Win2k desktop grey */
+    --win-darkborder: #808080;
+    --win-lightborder:#FFFFFF;
+    --win-title-from: #000080;   /* Win2k title bar gradient start (dark navy) */
+    --win-title-to:   #1084D0;   /* Win2k title bar gradient end  */
+    --win-text:       #000000;
+    --win-link:       #0000FF;
+    --win-link-hover: #FF0000;
+    --win-visited:    #800080;
+    --win-hilight:    #316AC5;   /* Selection highlight blue */
+    --win-hilighttext:#FFFFFF;
+    --win-teal:       #008080;   /* Classic Win taskbar teal */
+    --win-white:      #FFFFFF;
+    --win-red:        #FF0000;
+    --win-navy:       #000080;
+    --font-system:    'Arial', 'Helvetica', sans-serif;
+    --font-mono:      'Courier New', Courier, monospace;
 }
 
-/* Global Reset & Base Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* ── Global Reset ── */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-html {
-    scroll-behavior: smooth;
-    font-size: 16px;
-}
+html { scroll-behavior: auto; font-size: 13px; }
 
 body {
-    font-family: var(--font-body);
-    color: var(--clr-text-dark);
-    background-color: var(--clr-cream);
-    line-height: 1.6;
+    font-family: var(--font-system);
+    font-size: 13px;
+    color: var(--win-text);
+    background-color: var(--win-bg);
+    background-image: url("data:image/svg+xml,%3Csvg width='4' height='4' viewBox='0 0 4 4' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='0' y='0' width='2' height='2' fill='%23C8C4BC' /%3E%3C/svg%3E");
+    line-height: 1.4;
     overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-heading);
-    color: var(--clr-navy);
+    font-family: var(--font-system);
+    font-weight: bold;
+    color: var(--win-navy);
     line-height: 1.2;
-    margin-bottom: 0.5rem;
+    margin-bottom: 4px;
 }
 
-p {
-    margin-bottom: 1rem;
-}
+p { margin-bottom: 8px; }
+a { color: var(--win-link); text-decoration: underline; }
+a:hover { color: var(--win-link-hover); }
+a:visited { color: var(--win-visited); }
+ul, ol { list-style: none; }
+img { max-width: 100%; height: auto; display: block; }
 
-a {
-    text-decoration: none;
-    color: inherit;
-    transition: color var(--transition-fast);
-}
-
-ul, ol {
-    list-style: none;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* Layout Utilities */
+/* ── Utilities ── */
 .container {
     width: 100%;
     margin-inline: auto;
-    max-width: 1280px;
-    padding-inline: 1.5rem;
+    max-width: 960px;
+    padding-inline: 8px;
 }
-
-.max-w-narrow {
-    max-width: 800px;
-}
-
+.max-w-narrow { max-width: 720px; }
 .text-center { text-align: center; }
-.mt-2 { margin-top: 1rem; }
-.mt-4 { margin-top: 2rem; }
+.mt-2 { margin-top: 8px; }
+.mt-4 { margin-top: 16px; }
+.section { padding: 16px 8px; }
+.bg-light { background-color: var(--win-white); }
 
-.section {
-    padding: var(--spacing-section);
+/* ── Win2k Raised/Sunken Bevel Mixins ── */
+.bevel-raised {
+    border-top:    2px solid var(--win-lightborder);
+    border-left:   2px solid var(--win-lightborder);
+    border-right:  2px solid var(--win-darkborder);
+    border-bottom: 2px solid var(--win-darkborder);
+}
+.bevel-sunken {
+    border-top:    2px solid var(--win-darkborder);
+    border-left:   2px solid var(--win-darkborder);
+    border-right:  2px solid var(--win-lightborder);
+    border-bottom: 2px solid var(--win-lightborder);
+}
+.win-panel {
+    background-color: var(--win-bg);
+    border-top:    2px solid var(--win-lightborder);
+    border-left:   2px solid var(--win-lightborder);
+    border-right:  2px solid var(--win-darkborder);
+    border-bottom: 2px solid var(--win-darkborder);
+}
+.win-inset {
+    background-color: var(--win-white);
+    border-top:    2px solid var(--win-darkborder);
+    border-left:   2px solid var(--win-darkborder);
+    border-right:  2px solid var(--win-lightborder);
+    border-bottom: 2px solid var(--win-lightborder);
 }
 
-.bg-light { background-color: rgba(255,255,255, 0.4); }
+/* ── Window Frame (the main wrapper widget look) ── */
+.win-window {
+    background-color: var(--win-bg);
+    border: 2px solid var(--win-darkborder);
+    border-top:   2px solid var(--win-lightborder);
+    border-left:  2px solid var(--win-lightborder);
+    margin-bottom: 12px;
+}
+.win-titlebar {
+    background: linear-gradient(to right, var(--win-title-from), var(--win-title-to));
+    color: var(--win-white);
+    font-weight: bold;
+    font-size: 12px;
+    padding: 3px 6px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
+}
+.win-titlebar-left {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.win-titlebar-icon {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+}
+.win-titlebar-buttons {
+    display: flex;
+    gap: 2px;
+}
+.win-tb-btn {
+    width: 16px;
+    height: 14px;
+    background-color: var(--win-bg);
+    border-top:    1px solid var(--win-lightborder);
+    border-left:   1px solid var(--win-lightborder);
+    border-right:  1px solid var(--win-darkborder);
+    border-bottom: 1px solid var(--win-darkborder);
+    font-size: 9px;
+    line-height: 12px;
+    text-align: center;
+    color: var(--win-text);
+    cursor: default;
+    font-weight: bold;
+    text-decoration: none;
+}
+.win-body { padding: 8px; }
 
+/* ── Section Groupbox Separator ── */
 .title-separator {
-    width: 60px;
-    height: 3px;
-    background-color: var(--clr-gold);
-    margin: 1rem auto 2rem;
-    border-radius: 2px;
+    width: 100%;
+    height: 0;
+    border-top: 1px solid var(--win-darkborder);
+    border-bottom: 1px solid var(--win-lightborder);
+    margin: 8px 0;
 }
 
-.section-desc {
-    color: var(--clr-text-muted);
-    font-size: 1.125rem;
-    max-width: 600px;
-    margin-inline: auto;
-}
+.section-desc { font-size: 13px; color: #444; }
 
-/* Glassmorphism & Cards */
-.glass-card {
-    background: rgba(255, 255, 255, 0.75);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    border-radius: var(--radius-lg);
-    box-shadow: 0 10px 40px rgba(11, 31, 58, 0.08);
-}
-
-/* Button Styles - Classic & Royal */
+/* ── Buttons ── */
 .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1.75rem;
-    border-radius: var(--radius-sm);
-    font-family: var(--font-body);
-    font-weight: 500;
-    font-size: 1rem;
+    gap: 4px;
+    padding: 3px 14px;
+    font-family: var(--font-system);
+    font-size: 13px;
+    font-weight: normal;
     cursor: pointer;
-    transition: all var(--transition-smooth);
-    border: none;
-    outline: none;
+    text-decoration: none;
+    outline: 1px dotted transparent;
+    color: var(--win-text);
+    background-color: var(--win-bg);
+    border-top:    2px solid var(--win-lightborder);
+    border-left:   2px solid var(--win-lightborder);
+    border-right:  2px solid var(--win-darkborder);
+    border-bottom: 2px solid var(--win-darkborder);
+    min-width: 75px;
 }
+.btn:hover { color: var(--win-text); text-decoration: none; }
+.btn:active {
+    border-top:    2px solid var(--win-darkborder);
+    border-left:   2px solid var(--win-darkborder);
+    border-right:  2px solid var(--win-lightborder);
+    border-bottom: 2px solid var(--win-lightborder);
+    padding: 4px 13px 2px 15px;
+}
+.btn:focus { outline: 1px dotted var(--win-text); outline-offset: -4px; }
 
 .btn-primary {
-    background-color: var(--clr-navy);
-    color: var(--clr-white);
-    box-shadow: 0 4px 14px rgba(11, 31, 58, 0.2);
+    background-color: var(--win-bg);
+    color: var(--win-text);
+    font-weight: bold;
 }
-.btn-primary:hover {
-    background-color: var(--clr-maroon);
-    color: var(--clr-white);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(90, 15, 28, 0.3);
-}
-
 .btn-secondary {
-    background-color: transparent;
-    color: var(--clr-navy);
-    border: 2px solid var(--clr-navy);
+    background-color: var(--win-bg);
+    color: var(--win-text);
 }
-.btn-secondary:hover {
-    background-color: var(--clr-navy);
-    color: var(--clr-white);
-    border-color: var(--clr-navy);
-}
-
 .btn-outline {
-    background-color: transparent;
-    border: 1px solid var(--clr-gold);
-    color: var(--clr-gold);
-}
-.btn-outline:hover {
-    background-color: var(--clr-gold);
-    color: var(--clr-white);
+    background-color: var(--win-bg);
+    color: var(--win-text);
 }
 
-/* Animations (Intersection Observer Targets) */
+/* Fade-up — disable on Win2k theme (no animations, just show everything) */
 .fade-up {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity var(--transition-slow), transform var(--transition-slow);
-}
-.fade-up.in-view {
     opacity: 1;
-    transform: translateY(0);
+    transform: none;
 }
+.fade-up.in-view { opacity: 1; transform: none; }
 
-/* Header & Navbar */
+/* ================================================================
+   NAVBAR — looks like Internet Explorer 5/6 toolbar
+   ================================================================ */
 .navbar {
-    position: fixed;
+    position: sticky;
     top: 0;
-    left: 0;
-    width: 100%;
     z-index: 1000;
-    background-color: rgba(245, 241, 232, 0.95);
-    backdrop-filter: blur(12px);
-    box-shadow: 0 2px 20px rgba(0,0,0,0.05);
-    transition: padding var(--transition-fast), background-color var(--transition-fast);
-    padding: 1rem 0;
+    background-color: var(--win-bg);
+    border-bottom: 2px solid var(--win-darkborder);
+    padding: 0;
 }
+.navbar.scrolled { background-color: var(--win-bg); }
 
-.navbar.scrolled {
-    padding: 0.75rem 0;
-    background-color: var(--clr-white);
+/* Taskbar-style top strip */
+.navbar::before {
+    content: '';
+    display: block;
+    height: 4px;
+    background: linear-gradient(to right, var(--win-title-from), var(--win-title-to));
 }
 
 .nav-container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    gap: 8px;
+    padding: 4px 8px;
+    flex-wrap: wrap;
 }
 
 .logo {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 6px;
+    text-decoration: none;
 }
-.logo-icon {
-    font-size: 2.25rem;
-    color: var(--clr-maroon);
-}
-.logo-text {
-    display: flex;
-    flex-direction: column;
-}
+.logo-icon { font-size: 24px; color: var(--win-navy); }
+.logo-text { display: flex; flex-direction: column; }
 .logo-title {
-    font-family: var(--font-heading);
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--clr-navy);
+    font-family: var(--font-system);
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--win-navy);
     line-height: 1.1;
+    text-decoration: none;
 }
 .logo-subtitle {
-    font-size: 0.75rem;
-    color: var(--clr-text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+    font-size: 10px;
+    color: #555;
+    text-transform: none;
+    letter-spacing: 0;
 }
 
-.nav-links {
-    display: none; /* hidden on mobile initially */
-}
+.nav-links { display: none; }
 .nav-list {
     display: flex;
-    gap: 2rem;
+    gap: 0;
+    flex-wrap: wrap;
 }
-.nav-list a {
-    font-weight: 500;
-    font-size: 0.9rem;
-    color: var(--clr-navy);
-    position: relative;
+.nav-list li a {
+    display: inline-block;
+    padding: 3px 10px;
+    text-decoration: none;
+    color: var(--win-text);
+    font-size: 12px;
+    border-top:   2px solid var(--win-lightborder);
+    border-left:  2px solid var(--win-lightborder);
+    border-right: 2px solid var(--win-darkborder);
+    border-bottom:2px solid var(--win-darkborder);
+    background-color: var(--win-bg);
+    margin-right: 2px;
 }
-.nav-list a::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    height: 2px;
-    width: 0;
-    background-color: var(--clr-gold);
-    transition: width var(--transition-fast);
-}
-.nav-list a:hover::after {
-    width: 100%;
+.nav-list li a:hover {
+    background-color: var(--win-hilight);
+    color: var(--win-white);
 }
 
-.nav-cta {
-    display: none;
-}
+.nav-cta { display: none; }
 
 .mobile-toggle {
     display: flex;
-    background: transparent;
-    border: none;
-    font-size: 1.5rem;
-    color: var(--clr-navy);
+    background: var(--win-bg);
+    border-top:   2px solid var(--win-lightborder);
+    border-left:  2px solid var(--win-lightborder);
+    border-right: 2px solid var(--win-darkborder);
+    border-bottom:2px solid var(--win-darkborder);
+    font-size: 18px;
+    color: var(--win-text);
     cursor: pointer;
+    padding: 2px 6px;
 }
 
-/* Hero Section */
+/* ================================================================
+   HERO SECTION — Windows 2000 "Welcome" dialog / splash screen
+   ================================================================ */
 .hero {
     position: relative;
-    padding: 10rem 0 6rem;
-    min-height: 90vh;
-    display: flex;
-    align-items: center;
-    background-color: var(--clr-navy);
+    padding: 12px 0 8px;
+    min-height: auto;
+    display: block;
+    background-color: var(--win-bg);
 }
+.hero-bg, .hero-overlay { display: none; }
+.hero-container { position: relative; z-index: 2; color: var(--win-text); }
 
-.hero-bg {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    /* Using a remote placeholder image of a classic library */
-    background: url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&q=80&w=1920') no-repeat center center;
-    background-size: cover;
-    z-index: 0;
-}
-.hero-overlay {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(135deg, rgba(11, 31, 58, 0.9) 0%, rgba(90, 15, 28, 0.75) 100%);
-    z-index: 1;
-}
-
-.hero-container {
-    position: relative;
-    z-index: 2;
-    color: var(--clr-white);
-}
-
+/* Outer window chrome */
 .hero-content {
-    max-width: 800px;
+    background-color: var(--win-bg);
+    border-top:    2px solid var(--win-lightborder);
+    border-left:   2px solid var(--win-lightborder);
+    border-right:  2px solid var(--win-darkborder);
+    border-bottom: 2px solid var(--win-darkborder);
+    max-width: 100%;
     margin: 0;
+    padding: 0;
 }
 
+/* Title bar inside hero */
+.hero-content::before {
+    content: '🎓  Niram Tuition Centre - Welcome';
+    display: block;
+    background: linear-gradient(to right, var(--win-title-from), var(--win-title-to));
+    color: var(--win-white);
+    font-weight: bold;
+    font-size: 12px;
+    padding: 3px 6px;
+    font-family: var(--font-system);
+}
+
+/* Badge styled as a status-bar chip */
 .badge {
     display: inline-block;
-    padding: 0.25rem 1rem;
-    background-color: rgba(201, 161, 74, 0.15);
-    border: 1px solid var(--clr-gold);
-    color: var(--clr-gold);
-    border-radius: 50px;
-    font-size: 0.875rem;
-    font-weight: 500;
-    margin-bottom: 1.5rem;
-    letter-spacing: 0.05em;
+    background-color: var(--win-teal);
+    color: var(--win-white);
+    font-size: 11px;
+    padding: 2px 8px;
+    border-top:   1px solid #006060;
+    border-left:  1px solid #006060;
+    border-right: 1px solid #00AAAA;
+    border-bottom:1px solid #00AAAA;
+    margin: 10px 10px 6px 10px;
+    display: block;
+    width: fit-content;
     text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: 0;
 }
 
 .hero-title {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    color: var(--clr-white);
-    margin-bottom: 1.5rem;
-    letter-spacing: -0.02em;
+    font-size: clamp(16px, 2.5vw, 22px);
+    color: var(--win-navy);
+    margin: 0 10px 6px 10px;
+    font-weight: bold;
+    font-family: var(--font-system);
 }
 
 .hero-subtitle {
-    font-size: 1.25rem;
-    color: rgba(255,255,255,0.85);
-    margin-bottom: 2.5rem;
-    max-width: 600px;
+    font-size: 13px;
+    color: var(--win-text);
+    margin: 0 10px 10px 10px;
+    max-width: 100%;
 }
 
 .hero-actions {
     display: flex;
-    gap: 1rem;
+    gap: 6px;
     flex-wrap: wrap;
-    margin-bottom: 3rem;
-}
-.hero-actions .btn-primary {
-    background-color: var(--clr-gold);
-    color: var(--clr-navy);
-}
-.hero-actions .btn-primary:hover {
-    background-color: var(--clr-gold-light);
-    transform: translateY(-2px);
-}
-.hero-actions .btn-secondary {
-    border-color: rgba(255,255,255, 0.5);
-    color: var(--clr-white);
-}
-.hero-actions .btn-secondary:hover {
-    background-color: var(--clr-white);
-    color: var(--clr-navy);
-    border-color: var(--clr-white);
+    margin: 8px 10px 10px 10px;
 }
 
+/* Win2k status bar at the bottom of hero */
 .hero-trust {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    font-size: 0.875rem;
-    color: rgba(255,255,255,0.7);
+    gap: 8px;
+    font-size: 11px;
+    color: var(--win-text);
+    background-color: var(--win-bg);
+    border-top: 1px solid var(--win-darkborder);
+    padding: 3px 6px;
+    margin: 0;
 }
-.trust-avatars {
-    display: flex;
-}
+.trust-avatars { display: flex; }
 .trust-avatars .avatar {
-    width: 32px;
-    height: 32px;
+    width: 20px; height: 20px;
     border-radius: 50%;
-    margin-left: -10px;
-    border: 2px solid var(--clr-navy);
+    margin-left: -6px;
+    border: 1px solid var(--win-darkborder);
     background-size: cover;
 }
-.trust-avatars .avatar:first-child { margin-left: 0;}
+.trust-avatars .avatar:first-child { margin-left: 0; }
 
-/* Legacy & Trust Section */
+/* ================================================================
+   LEGACY / STATS SECTION
+   ================================================================ */
 .legacy-section {
-    position: relative;
+    background-color: var(--win-bg);
 }
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    max-width: 900px;
+    gap: 6px;
+    max-width: 100%;
     margin-inline: auto;
+    margin-top: 8px;
 }
 .stat-item {
-    background-color: var(--clr-white);
-    padding: 2rem;
-    border-radius: var(--radius-md);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-    border-bottom: 3px solid var(--clr-gold);
-    transition: transform var(--transition-smooth);
+    background-color: var(--win-white);
+    padding: 12px;
+    border-top:   2px solid var(--win-darkborder);
+    border-left:  2px solid var(--win-darkborder);
+    border-right: 2px solid var(--win-lightborder);
+    border-bottom:2px solid var(--win-lightborder);
+    text-align: center;
 }
-.stat-item:hover {
-    transform: translateY(-5px);
-}
+.stat-item:hover { background-color: #EEF4FF; }
 .stat-number {
-    font-size: 2.5rem;
-    font-family: var(--font-heading);
-    color: var(--clr-navy);
-    font-weight: 700;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--win-navy);
+    font-family: var(--font-system);
 }
 .stat-label {
-    font-size: 0.9rem;
-    color: var(--clr-text-muted);
-    font-weight: 500;
+    font-size: 11px;
+    color: #444;
+    font-weight: normal;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-top: 0.5rem;
+    letter-spacing: 0;
+    margin-top: 2px;
 }
 
-/* Why Choose Us - Features grid */
+/* ================================================================
+   WHY CHOOSE US
+   ================================================================ */
+.why-section { background-color: var(--win-bg); }
 .features-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2rem;
-    margin-top: 3rem;
+    gap: 6px;
+    margin-top: 8px;
 }
 .feature-card {
-    background-color: var(--clr-white);
-    padding: 2.5rem 2rem;
-    border-radius: var(--radius-lg);
-    border: 1px solid rgba(11, 31, 58, 0.05);
-    box-shadow: 0 4px 14px rgba(0,0,0,0.02);
-    transition: box-shadow var(--transition-smooth), transform var(--transition-smooth);
+    background-color: var(--win-white);
+    padding: 10px;
+    border-top:   2px solid var(--win-darkborder);
+    border-left:  2px solid var(--win-darkborder);
+    border-right: 2px solid var(--win-lightborder);
+    border-bottom:2px solid var(--win-lightborder);
     position: relative;
-    overflow: hidden;
 }
-.feature-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 3px;
-    background: linear-gradient(to right, var(--clr-gold), transparent);
-    opacity: 0;
-    transition: opacity var(--transition-smooth);
-}
-.feature-card:hover {
-    box-shadow: 0 10px 40px rgba(11, 31, 58, 0.06);
-    transform: translateY(-4px);
-}
-.feature-card:hover::before {
-    opacity: 1;
-}
-
+.feature-card::before { display: none; }
+.feature-card:hover { background-color: #EEF4FF; }
 .feature-icon {
-    font-size: 2.5rem;
-    color: var(--clr-maroon);
-    margin-bottom: 1.5rem;
+    font-size: 24px;
+    color: var(--win-navy);
+    margin-bottom: 6px;
 }
 .feature-title {
-    font-size: 1.25rem;
+    font-size: 13px;
+    font-weight: bold;
+    color: var(--win-navy);
 }
-.feature-desc {
-    color: var(--clr-text-muted);
-    margin-bottom: 0;
-}
+.feature-desc { font-size: 12px; color: #444; margin-bottom: 0; }
 
-/* Courses Section */
-.courses-section {
-    /* Subtle background styling */
-    background: linear-gradient(180deg, var(--clr-cream) 0%, var(--clr-white) 100%);
-}
+/* ================================================================
+   COURSES SECTION
+   ================================================================ */
+.courses-section { background-color: var(--win-bg); }
 .boards-container {
     display: flex;
     flex-wrap: wrap;
+    gap: 4px;
+    margin-block: 8px;
     justify-content: center;
-    gap: 1rem;
-    margin-block: 2rem;
 }
 .board-badge {
-    background-color: var(--clr-navy);
-    color: var(--clr-white);
-    padding: 0.5rem 1.5rem;
-    border-radius: var(--radius-sm);
-    font-weight: 600;
-    font-size: 0.875rem;
-    letter-spacing: 0.05em;
-    border: 1px solid rgba(255,255,255,0.1);
+    background-color: var(--win-navy);
+    color: var(--win-white);
+    padding: 2px 10px;
+    font-weight: bold;
+    font-size: 12px;
+    border-top:   1px solid #0000BB;
+    border-left:  1px solid #0000BB;
+    border-right: 1px solid #000044;
+    border-bottom:1px solid #000044;
 }
 
 .classrooms-bento {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 6px;
+    margin-top: 8px;
 }
 .classroom-card {
-    background-color: var(--clr-navy);
-    color: var(--clr-white);
-    padding: 3rem;
-    border-radius: var(--radius-lg);
+    background-color: var(--win-bg);
+    border-top:   2px solid var(--win-lightborder);
+    border-left:  2px solid var(--win-lightborder);
+    border-right: 2px solid var(--win-darkborder);
+    border-bottom:2px solid var(--win-darkborder);
+    padding: 10px;
     text-align: left;
     position: relative;
     overflow: hidden;
 }
-.classroom-card::after {
-    content: '\2728'; /* Sparkles or subtle icon */
-    position: absolute;
-    top: -20px;
-    right: -20px;
-    font-size: 10rem;
-    opacity: 0.03;
-    pointer-events: none;
-}
-.classroom-card:nth-child(2) {
-    background-color: var(--clr-white);
-    color: var(--clr-navy);
-    border: 1px solid rgba(0,0,0,0.1);
-}
-.classroom-card:nth-child(2) h3 {
-    color: var(--clr-maroon);
-}
-.classroom-card:nth-child(2) .classroom-features i {
-    color: var(--clr-gold);
-}
+.classroom-card::after { display: none; }
+/* Groupbox-style title strip at top */
+.classroom-card:nth-child(1) { border-top: 3px solid var(--win-navy); }
+.classroom-card:nth-child(2) { border-top: 3px solid var(--win-teal); }
+.classroom-card:nth-child(2) h3 { color: var(--win-teal); }
+.classroom-card:nth-child(2) .classroom-features i { color: var(--win-teal); }
 
 .classroom-name {
-    color: inherit;
-    font-size: 1.75rem;
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--win-navy);
+    margin-bottom: 4px;
 }
 .classroom-focus {
-    font-size: 0.9rem;
-    opacity: 0.8;
-    margin-bottom: 1.5rem;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    padding-bottom: 1rem;
-}
-.classroom-card:nth-child(2) .classroom-focus {
-    border-color: rgba(0,0,0,0.1);
+    font-size: 11px;
+    color: #555;
+    margin-bottom: 8px;
+    border-bottom: 1px solid var(--win-darkborder);
+    padding-bottom: 4px;
 }
 .classroom-features li {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 0.75rem;
-    font-weight: 500;
+    gap: 6px;
+    margin-bottom: 3px;
+    font-size: 12px;
 }
-.classroom-features i {
-    color: var(--clr-gold);
-    font-size: 1.25rem;
-}
+.classroom-features i { color: var(--win-navy); font-size: 14px; }
 
-/* Results Section Banner */
-.results-section {
-    padding: 0;
-}
+/* ================================================================
+   RESULTS SECTION
+   ================================================================ */
+.results-section { padding: 0; }
 .results-banner {
-    background-color: var(--clr-maroon);
-    border-radius: var(--radius-lg);
-    padding: 4rem 2rem;
-    color: var(--clr-white);
-    box-shadow: 0 10px 40px rgba(90, 15, 28, 0.2);
+    background-color: var(--win-navy);
+    border-top:   2px solid #3333BB;
+    border-left:  2px solid #3333BB;
+    border-right: 2px solid #000033;
+    border-bottom:2px solid #000033;
+    padding: 24px 16px;
+    color: var(--win-white);
+    text-align: center;
     position: relative;
     overflow: hidden;
 }
-.results-banner::before {
-    content: '';
-    position: absolute;
-    top: 0; right: 0; bottom: 0; left: 0;
-    background: radial-gradient(circle at top right, rgba(201, 161, 74, 0.15) 0%, transparent 60%);
-    pointer-events: none;
-}
+.results-banner::before { display: none; }
 .results-title {
-    color: var(--clr-gold);
-    font-size: 1rem;
+    color: #FFFF00;
+    font-size: 11px;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: 1rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
 }
 .results-highlight {
-    font-size: clamp(1.5rem, 3vw, 2.5rem);
-    color: var(--clr-white);
+    font-size: clamp(14px, 2.5vw, 20px);
+    color: var(--win-white);
     line-height: 1.3;
-    max-width: 800px;
-    margin-inline: auto;
+    font-weight: bold;
 }
 .results-divider {
-    width: 1px;
-    height: 40px;
-    background-color: rgba(255,255,255,0.2);
-    margin: 2rem auto;
+    width: 60%;
+    height: 1px;
+    background: rgba(255,255,255,0.3);
+    margin: 12px auto;
 }
 .motivational-quote {
-    font-family: var(--font-heading);
-    font-size: 1.25rem;
+    font-size: 14px;
     font-style: italic;
-    opacity: 0.9;
+    color: #CCCCFF;
 }
 
-/* Testimonials */
+/* ================================================================
+   TESTIMONIALS
+   ================================================================ */
+.testimonials-section { background-color: var(--win-bg); }
 .testimonials-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2rem;
-    margin-top: 3rem;
+    gap: 6px;
+    margin-top: 8px;
 }
 .testimonial-card {
-    background-color: var(--clr-white);
-    padding: 2.5rem;
-    border-radius: var(--radius-lg);
-    border-top: 4px solid var(--clr-navy);
-    box-shadow: 0 4px 14px rgba(0,0,0,0.03);
+    background-color: var(--win-white);
+    padding: 12px;
+    border-top:   2px solid var(--win-darkborder);
+    border-left:  2px solid var(--win-darkborder);
+    border-right: 2px solid var(--win-lightborder);
+    border-bottom:2px solid var(--win-lightborder);
+    border-top: 3px solid var(--win-navy);
 }
-.quote-icon {
-    font-size: 2rem;
-    color: var(--clr-gold);
-    opacity: 0.5;
-    margin-bottom: 1rem;
-}
+.quote-icon { font-size: 18px; color: var(--win-navy); opacity: 0.5; margin-bottom: 6px; }
 .testimonial-text {
-    font-family: var(--font-heading);
-    font-size: 1.125rem;
+    font-size: 12px;
     font-style: italic;
-    color: var(--clr-navy);
-    margin-bottom: 2rem;
-    line-height: 1.8;
+    color: var(--win-text);
+    margin-bottom: 10px;
+    line-height: 1.5;
+    font-family: var(--font-system);
 }
-.testimonial-author {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
+.testimonial-author { display: flex; align-items: center; gap: 8px; }
 .author-img {
-    width: 48px;
-    height: 48px;
+    width: 36px; height: 36px;
     border-radius: 50%;
     object-fit: cover;
+    border: 1px solid var(--win-darkborder);
 }
-.author-name {
-    font-size: 1rem;
-    font-family: var(--font-body);
-    margin: 0;
-}
-.author-label {
-    font-size: 0.8rem;
-    color: var(--clr-text-muted);
-}
+.author-name { font-size: 12px; font-weight: bold; margin: 0; font-family: var(--font-system); }
+.author-label { font-size: 11px; color: #666; }
 
-/* Final CTA Section */
-.cta-section {
-    padding-block: 6rem;
+/* ================================================================
+   CTA SECTION — Win2k Dialog Box
+   ================================================================ */
+.cta-section { padding-block: 16px; background-color: var(--win-bg); }
+.glass-card {
+    background: var(--win-bg) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
 }
 .cta-card {
-    padding: 4rem 2rem;
-    background: linear-gradient(180deg, var(--clr-navy) 0%, #08172b 100%);
-    color: var(--clr-white);
+    padding: 0;
+    background: var(--win-bg);
+    color: var(--win-text);
     border: none;
-    max-width: 900px;
+    max-width: 700px;
     margin-inline: auto;
+    border-top:   2px solid var(--win-lightborder);
+    border-left:  2px solid var(--win-lightborder);
+    border-right: 2px solid var(--win-darkborder);
+    border-bottom:2px solid var(--win-darkborder);
+}
+/* Win dialog title bar */
+.cta-card::before {
+    content: '📢  Enrol Now - Niram Tuition Centre';
+    display: block;
+    background: linear-gradient(to right, var(--win-title-from), var(--win-title-to));
+    color: var(--win-white);
+    font-weight: bold;
+    font-size: 12px;
+    padding: 3px 6px;
+    font-family: var(--font-system);
 }
 .cta-title {
-    color: var(--clr-white);
-    font-size: clamp(2rem, 4vw, 3rem);
-    margin-bottom: 1rem;
+    color: var(--win-navy);
+    font-size: clamp(14px, 2vw, 18px);
+    margin: 12px 12px 6px 12px;
+    font-family: var(--font-system);
 }
 .cta-desc {
-    font-size: 1.125rem;
-    opacity: 0.8;
-    margin-bottom: 2.5rem;
+    font-size: 12px;
+    color: #444;
+    margin: 0 12px 12px 12px;
 }
 .cta-actions {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 6px;
     flex-wrap: wrap;
+    padding: 8px 12px 14px 12px;
+    border-top: 1px solid var(--win-darkborder);
+    background-color: #BDB9B0;
 }
-.cta-actions .btn-primary { background-color: var(--clr-gold); color:var(--clr-navy); }
-.cta-actions .btn-secondary { border-color: rgba(255,255,255, 0.4); color: var(--clr-white); }
-.cta-actions .btn-secondary:hover { background-color: var(--clr-white); color: var(--clr-navy); border-color: var(--clr-white);}
+.cta-actions .btn-primary,
+.cta-actions .btn-secondary {
+    background-color: var(--win-bg);
+    color: var(--win-text);
+    border-top:    2px solid var(--win-lightborder);
+    border-left:   2px solid var(--win-lightborder);
+    border-right:  2px solid var(--win-darkborder);
+    border-bottom: 2px solid var(--win-darkborder);
+}
 
-/* FAQ Section */
-.faq-accordion {
-    margin-top: 3rem;
-    text-align: left;
-}
+/* ================================================================
+   FAQ SECTION — Groupbox / ListBox style
+   ================================================================ */
+.faq-section { background-color: var(--win-bg); }
+.faq-accordion { margin-top: 8px; text-align: left; }
 .faq-item {
-    background-color: var(--clr-white);
-    border-radius: var(--radius-md);
-    margin-bottom: 1rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    background-color: var(--win-white);
+    border-top:   2px solid var(--win-darkborder);
+    border-left:  2px solid var(--win-darkborder);
+    border-right: 2px solid var(--win-lightborder);
+    border-bottom:2px solid var(--win-lightborder);
+    margin-bottom: 4px;
     overflow: hidden;
 }
 .faq-question {
     width: 100%;
     text-align: left;
-    padding: 1.5rem;
-    background: none;
+    padding: 6px 10px;
+    background: var(--win-bg);
     border: none;
-    font-family: var(--font-body);
-    font-weight: 600;
-    font-size: 1.05rem;
-    color: var(--clr-navy);
+    font-family: var(--font-system);
+    font-weight: bold;
+    font-size: 12px;
+    color: var(--win-navy);
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: background-color var(--transition-fast);
+    border-bottom: 1px solid var(--win-darkborder);
 }
-.faq-question:hover {
-    background-color: var(--clr-cream);
+.faq-question:hover { background-color: var(--win-hilight); color: var(--win-white); }
+.faq-question:hover i { color: var(--win-white); }
+.faq-question i { color: var(--win-navy); transition: transform 200ms; }
+.faq-item.active .faq-question {
+    background-color: var(--win-hilight);
+    color: var(--win-white);
 }
-.faq-question i {
-    color: var(--clr-gold);
-    transition: transform var(--transition-smooth);
-}
-.faq-item.active .faq-question i {
-    transform: rotate(180deg);
-}
+.faq-item.active .faq-question i { color: var(--win-white); transform: rotate(180deg); }
 .faq-answer {
     max-height: 0;
     overflow: hidden;
-    transition: max-height var(--transition-smooth);
-    background-color: var(--clr-white);
+    transition: max-height 200ms;
+    background-color: var(--win-white);
 }
 .faq-answer p {
-    padding: 0 1.5rem 1.5rem 1.5rem;
-    color: var(--clr-text-muted);
+    padding: 6px 10px;
+    color: #444;
     margin: 0;
+    font-size: 12px;
+    font-family: var(--font-system);
 }
 
-/* Footer Section */
+/* ================================================================
+   FOOTER — Dark taskbar-style footer
+   ================================================================ */
 .footer {
-    background-color: #05101E; /* Very Dark Navy */
-    color: rgba(255,255,255,0.7);
-    padding: 5rem 0 2rem;
-    border-top: 4px solid var(--clr-maroon);
+    background-color: #05101E;
+    color: rgba(255,255,255,0.85);
+    padding: 16px 0 8px;
+    border-top: 3px solid var(--win-teal);
     position: relative;
+    font-size: 12px;
 }
 .footer-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 3rem;
-    margin-bottom: 4rem;
+    gap: 16px;
+    margin-bottom: 16px;
 }
-
-.brand-col .logo {
-    margin-bottom: 1rem;
-}
-.brand-col .logo-title {
-    color: var(--clr-white);
-}
+.brand-col .logo { margin-bottom: 6px; }
+.brand-col .logo-title { color: var(--win-white); font-size: 13px; }
+.brand-col .logo-icon { color: #AADDFF; }
 .footer-moto {
     font-style: italic;
-    font-family: var(--font-heading);
-    color: var(--clr-gold);
-    font-size: 1.1rem;
+    color: #AADDFF;
+    font-size: 12px;
+    font-family: var(--font-system);
 }
-.social-links {
-    display: flex;
-    gap: 1rem;
-}
+.social-links { display: flex; gap: 4px; }
 .social-links a {
-    color: var(--clr-white);
-    font-size: 1.5rem;
-    background-color: rgba(255,255,255,0.05);
-    width: 40px; height: 40px;
+    color: var(--win-white);
+    font-size: 18px;
+    background-color: rgba(255,255,255,0.08);
+    width: 30px; height: 28px;
     display: flex; align-items: center; justify-content: center;
-    border-radius: 50%;
+    border-top:   1px solid rgba(255,255,255,0.3);
+    border-left:  1px solid rgba(255,255,255,0.3);
+    border-right: 1px solid rgba(0,0,0,0.4);
+    border-bottom:1px solid rgba(0,0,0,0.4);
+    text-decoration: none;
 }
-.social-links a:hover {
-    background-color: var(--clr-gold);
-    color: var(--clr-navy);
-}
-
+.social-links a:hover { background-color: var(--win-teal); color: var(--win-white); }
 .footer-heading {
-    color: var(--clr-white);
-    font-family: var(--font-body);
-    font-size: 1.125rem;
-    margin-bottom: 1.5rem;
+    color: var(--win-white);
+    font-family: var(--font-system);
+    font-size: 12px;
+    margin-bottom: 8px;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    padding-bottom: 4px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
     position: relative;
-    padding-bottom: 0.5rem;
 }
-.footer-heading::after {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 0; width: 30px; height: 2px;
-    background-color: var(--clr-gold);
-}
-
-.footer-links li { margin-bottom: 0.75rem; }
-.footer-links a:hover { color: var(--clr-gold); padding-left: 4px; }
-
+.footer-heading::after { display: none; }
+.footer-links li { margin-bottom: 3px; }
+.footer-links a { color: #AADDFF; font-size: 12px; }
+.footer-links a:hover { color: #FFFFFF; }
 .footer-contact li {
     display: flex;
-    gap: 1rem;
-    margin-bottom: 1rem;
+    gap: 6px;
+    margin-bottom: 6px;
     align-items: flex-start;
+    font-size: 12px;
 }
-.footer-contact i {
-    color: var(--clr-gold);
-    font-size: 1.25rem;
-    margin-top: 2px;
-}
-
+.footer-contact i { color: #AADDFF; font-size: 14px; margin-top: 1px; }
 .footer-bottom {
-    pt: 2rem;
-    border-top: 1px solid rgba(255,255,255,0.1);
+    border-top: 1px solid rgba(255,255,255,0.15);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
-    padding-top: 2rem;
+    gap: 4px;
+    padding-top: 8px;
     text-align: center;
-    font-size: 0.875rem;
+    font-size: 11px;
 }
-.footer-watermark {
-    color: rgba(255,255,255,0.3);
+.footer-watermark { color: rgba(255,255,255,0.35); font-size: 10px; }
+
+/* Win2k "blinky" marquee-style IE status bar on footer */
+.footer::before {
+    content: '✔  Niram Tuition Centre  |  All Major Boards  |  Est. 2009  |  1000+ Students';
+    display: block;
+    background: var(--win-teal);
+    color: var(--win-white);
+    font-size: 11px;
+    padding: 2px 8px;
+    font-family: var(--font-system);
+    text-align: center;
+    letter-spacing: 0.03em;
+    margin-bottom: 12px;
 }
 
-/* Floating WhatsApp Link */
+/* WhatsApp Float */
 .whatsapp-float {
     position: fixed;
-    bottom: 2rem;
-    right: 2rem;
+    bottom: 20px;
+    right: 20px;
     background-color: #25D366;
     color: white;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
+    width: 48px; height: 46px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2rem;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+    font-size: 24px;
+    border-top:   2px solid #30EF78;
+    border-left:  2px solid #30EF78;
+    border-right: 2px solid #0E8033;
+    border-bottom:2px solid #0E8033;
     z-index: 1000;
-    transition: transform var(--transition-fast);
+    text-decoration: none;
 }
-.whatsapp-float:hover {
-    transform: scale(1.1);
+.whatsapp-float:hover { background-color: #1EBE56; }
+
+/* ================================================================
+   SECTION HEADERS — Groupbox style
+   ================================================================ */
+.section-title {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--win-navy);
+    background-color: var(--win-bg);
+    display: inline-block;
+    padding: 0 6px;
+    position: relative;
+    z-index: 1;
+    font-family: var(--font-system);
+}
+.section-header {
+    border: 1px solid var(--win-darkborder);
+    border-top: none;
+    padding: 10px;
+    margin-top: -8px;
+    margin-bottom: 8px;
+    position: relative;
+}
+/* Groupbox legend effect via title-separator trick */
+.section-header .title-separator {
+    display: none;
 }
 
-/* Media Queries (Responsive) */
+/* ── Win2k "Active Desktop" blinking marquee banner ── */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0; }
+}
+.win-blink { animation: blink 1s step-start infinite; }
+
+/* ── Win2k scrollbar (for Webkit browsers) ── */
+::-webkit-scrollbar { width: 16px; height: 16px; background: var(--win-bg); }
+::-webkit-scrollbar-thumb {
+    background: var(--win-bg);
+    border-top:   2px solid var(--win-lightborder);
+    border-left:  2px solid var(--win-lightborder);
+    border-right: 2px solid var(--win-darkborder);
+    border-bottom:2px solid var(--win-darkborder);
+}
+::-webkit-scrollbar-button { background: var(--win-bg); display: block; height: 16px; width: 16px; }
+::-webkit-scrollbar-track { background: var(--win-bg); }
+::-webkit-scrollbar-corner { background: var(--win-bg); }
+
+/* ================================================================
+   RESPONSIVE
+   ================================================================ */
 @media (min-width: 768px) {
-    .stats-grid { grid-template-columns: repeat(4, 1fr); }
-    .features-grid { grid-template-columns: repeat(2, 1fr); }
-    .classrooms-bento { grid-template-columns: repeat(2, 1fr); }
-    .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
-    
-    .footer-grid { grid-template-columns: 2fr 1fr 1.5fr; }
-    
-    .footer-bottom {
-        flex-direction: row;
-        justify-content: space-between;
-    }
+    .stats-grid          { grid-template-columns: repeat(4, 1fr); }
+    .features-grid       { grid-template-columns: repeat(2, 1fr); }
+    .classrooms-bento    { grid-template-columns: repeat(2, 1fr); }
+    .testimonials-grid   { grid-template-columns: repeat(2, 1fr); }
+    .footer-grid         { grid-template-columns: 2fr 1fr 1.5fr; }
+    .footer-bottom       { flex-direction: row; justify-content: space-between; }
 }
 
 @media (min-width: 1024px) {
-    .mobile-toggle { display: none; }
-    .nav-links { display: block; }
-    .nav-cta { display: block; }
-    .features-grid { grid-template-columns: repeat(4, 1fr); }
+    .mobile-toggle       { display: none; }
+    .nav-links           { display: block; }
+    .nav-cta             { display: block; }
+    .features-grid       { grid-template-columns: repeat(4, 1fr); }
 }
 
 @media (max-width: 767px) {
@@ -868,22 +917,15 @@ img {
         top: 100%;
         left: 0;
         width: 100%;
-        background-color: var(--clr-white);
-        box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-        padding: 1.5rem;
-        display: none; /* toggled via JS */
+        background-color: var(--win-bg);
+        border-bottom: 2px solid var(--win-darkborder);
+        padding: 8px;
+        display: none;
+        z-index: 999;
     }
-    .nav-links.active {
-        display: block;
-    }
-    .nav-list {
-        flex-direction: column;
-        gap: 1.25rem;
-    }
-    .hero-actions {
-        flex-direction: column;
-    }
-    .hero-actions .btn {
-        width: 100%;
-    }
+    .nav-links.active  { display: block; }
+    .nav-list          { flex-direction: column; gap: 2px; }
+    .nav-list li a     { display: block; width: 100%; }
+    .hero-actions      { flex-direction: column; }
+    .hero-actions .btn { width: auto; }
 }
