@@ -518,7 +518,7 @@ img {
 
 .hero-title em {
     font-style: italic;
-    background: linear-gradient(135deg, #00C2FF 0%, #0086B3 50%, #004D66 100%);
+    background: linear-gradient(135deg, #E0F7FF 0%, #00F0FF 40%, #00C2FF 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
