@@ -343,11 +343,12 @@ img { max-width: 100%; height: auto; display: block; }
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-        135deg,
-        rgba(15, 30, 63, 0.97) 0%,
-        rgba(33, 58, 86, 0.88) 60%,
-        rgba(15, 30, 63, 0.95) 100%
+    background: radial-gradient(
+        circle,
+        rgba(42, 69, 100, 0.82) 0%,
+        rgba(33, 58, 86, 0.90) 35%,
+        rgba(15, 30, 63, 0.96) 75%,
+        rgba(8, 17, 36, 0.99) 100%
     );
     z-index: 1;
 }
