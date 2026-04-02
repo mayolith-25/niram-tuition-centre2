@@ -452,10 +452,12 @@ img {
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg,
-            rgba(15, 30, 63, 0.97) 0%,
-            rgba(33, 58, 86, 0.88) 60%,
-            rgba(15, 30, 63, 0.95) 100%);
+    background: radial-gradient(
+        circle at center,
+        rgba(16, 42, 75, 0.75) 0%,
+        rgba(10, 24, 50, 0.90) 50%,
+        rgba(4, 10, 25, 0.98) 100%
+    );
     z-index: 1;
 }
 
