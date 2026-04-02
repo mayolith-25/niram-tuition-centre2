@@ -3,23 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Niram Tuition Centre - Academic Excellence</title>
+    <title>Niram Tuition Centre — Academic Excellence Since 2009</title>
     <meta name="description" content="Niram Tuition Centre offers dedicated teaching, disciplined learning, and consistent academic excellence for CBSE, ICSE, MATRIC, and NIOS boards.">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Playfair Display for headings, Inter for body -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    
+
+    <!-- CSS (Fonts loaded inside via @import) -->
     <link rel="stylesheet" href="css/styles.css">
-    
-    <!-- Phosphor Icons via CDN (lightweight SVG icons) -->
+
+    <!-- Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 <body>
 
-    <!-- Navigation Header -->
+    <!-- ═══ NAVIGATION ═══ -->
     <header class="navbar" id="navbar">
         <div class="container nav-container">
             <a href="#" class="logo">
@@ -29,12 +24,11 @@
                     <span class="logo-subtitle">Dr. Radhakrishnan Classroom</span>
                 </div>
             </a>
-            
-            <!-- Mobile Menu Toggle -->
+
             <button class="mobile-toggle" aria-label="Toggle Navigation">
                 <i class="ph ph-list"></i>
             </button>
-            
+
             <nav class="nav-links">
                 <ul class="nav-list">
                     <li><a href="#home">Home</a></li>
@@ -44,48 +38,65 @@
                     <li><a href="#testimonials">Testimonials</a></li>
                 </ul>
             </nav>
+
             <div class="nav-cta">
                 <a href="#contact" class="btn btn-outline">Enquire Now</a>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- ═══ HERO ═══ -->
     <section id="home" class="hero">
         <div class="hero-bg"></div>
         <div class="hero-overlay"></div>
+
         <div class="container hero-container fade-up">
             <div class="hero-content">
                 <span class="badge">Trusted Academic Institution</span>
-                <h1 class="hero-title">Building Strong Academic Foundations for Lifelong Success</h1>
-                <p class="hero-subtitle">Dedicated teaching, disciplined learning, and consistent academic excellence for every student.</p>
-                
+                <h1 class="hero-title">
+                    Building <em>Strong Academic</em><br>Foundations for<br>Lifelong Success
+                </h1>
+                <p class="hero-subtitle">
+                    Dedicated teaching, disciplined learning, and consistent academic
+                    excellence — guiding every student toward their finest results.
+                </p>
+
                 <div class="hero-actions">
                     <a href="#contact" class="btn btn-primary">Enquire Now <i class="ph ph-arrow-right"></i></a>
                     <a href="#contact" class="btn btn-secondary">Book a Demo Class</a>
                 </div>
-                
+
                 <div class="hero-trust">
                     <div class="trust-avatars">
-                        <!-- Placeholders for student avatars -->
                         <div class="avatar" style="background-image: url('https://i.pravatar.cc/100?img=1');"></div>
                         <div class="avatar" style="background-image: url('https://i.pravatar.cc/100?img=2');"></div>
                         <div class="avatar" style="background-image: url('https://i.pravatar.cc/100?img=3');"></div>
                         <div class="avatar" style="background-image: url('https://i.pravatar.cc/100?img=4');"></div>
                     </div>
-                    <span>Trusted by <strong>1000+</strong> students & parents</span>
+                    <span>Trusted by <strong>1000+</strong> students &amp; parents</span>
                 </div>
             </div>
         </div>
+
+        <!-- Wave divider -->
+        <div class="hero-wave">
+            <svg viewBox="0 0 1440 54" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                <path d="M0 27C360 54 1080 0 1440 27V54H0V27Z" fill="#f7f3ec"/>
+            </svg>
+        </div>
     </section>
 
-    <!-- Trust & Legacy Section -->
-    <section id="legacy" class="section legacy-section bg-light text-center">
-        <div class="container fade-up">
+    <!-- ═══ LEGACY / STATS ═══ -->
+    <section id="legacy" class="section legacy-section text-center">
+        <div class="container fade-up legacy-inner">
+            <span class="section-eyebrow">Our Legacy</span>
             <h2 class="section-title">A Tradition of Academic Excellence</h2>
-            <div class="title-separator"></div>
-            <p class="section-desc">We believe teaching is inspiring. Our experienced faculty ensures an ambient schedule for optimal learning and understanding.</p>
-            
+            <div class="title-separator"><span class="sep-diamond"></span></div>
+            <p class="section-desc">
+                We believe teaching is inspiring and learning is understanding. Our experienced faculty
+                creates an ambient, structured environment where every student thrives.
+            </p>
+
             <div class="stats-grid mt-4">
                 <div class="stat-item">
                     <div class="stat-number">15+</div>
@@ -107,55 +118,53 @@
         </div>
     </section>
 
-    <!-- Why Choose Us / Features -->
+    <!-- ═══ WHY CHOOSE US ═══ -->
     <section id="why-us" class="section why-section">
         <div class="container">
             <div class="section-header text-center fade-up">
-                <h2 class="section-title">Why Choose Us</h2>
-                <div class="title-separator"></div>
+                <span class="section-eyebrow">Why Choose Us</span>
+                <h2 class="section-title">The Niram Difference</h2>
+                <div class="title-separator"><span class="sep-diamond"></span></div>
             </div>
-            
+
             <div class="features-grid">
-                <!-- Feature 1 -->
                 <div class="feature-card fade-up">
                     <div class="feature-icon"><i class="ph ph-user-focus"></i></div>
                     <h3 class="feature-title">Individual Attention</h3>
-                    <p class="feature-desc">Detailed explanations with personalized focus to ensure every student understands core concepts fully.</p>
+                    <p class="feature-desc">Detailed explanations with personalised focus ensuring every student fully grasps core concepts.</p>
                 </div>
-                
-                <!-- Feature 2 -->
-                <div class="feature-card fade-up" style="transition-delay: 100ms;">
+
+                <div class="feature-card fade-up" style="transition-delay:80ms;">
                     <div class="feature-icon"><i class="ph ph-books"></i></div>
-                    <h3 class="feature-title">Structured Learning Approach</h3>
+                    <h3 class="feature-title">Structured Learning</h3>
                     <p class="feature-desc">On-time syllabus completion with self-initiated learning and comprehensive pre-board preparation.</p>
                 </div>
-                
-                <!-- Feature 3 -->
-                <div class="feature-card fade-up" style="transition-delay: 200ms;">
+
+                <div class="feature-card fade-up" style="transition-delay:160ms;">
                     <div class="feature-icon"><i class="ph ph-chart-line-up"></i></div>
                     <h3 class="feature-title">Regular Assessments</h3>
-                    <p class="feature-desc">Board questions practice and weekly revision tests to track progress and build confidence.</p>
+                    <p class="feature-desc">Board question practice and weekly revision tests to track progress and build exam confidence.</p>
                 </div>
-                
-                <!-- Feature 4 -->
-                <div class="feature-card fade-up" style="transition-delay: 300ms;">
+
+                <div class="feature-card fade-up" style="transition-delay:240ms;">
                     <div class="feature-icon"><i class="ph ph-building-columns"></i></div>
-                    <h3 class="feature-title">Strong Concept Foundation</h3>
-                    <p class="feature-desc">Building strong academic foundations for long-term excellence, celebrating talents and developing skills.</p>
+                    <h3 class="feature-title">Strong Foundations</h3>
+                    <p class="feature-desc">Building lasting academic foundations, celebrating talent and developing skills for lifelong success.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Courses Offered Section -->
-    <section id="courses" class="section courses-section bg-light text-center">
+    <!-- ═══ COURSES ═══ -->
+    <section id="courses" class="section courses-section text-center">
         <div class="container">
             <div class="section-header fade-up">
+                <span class="section-eyebrow">Academic Programmes</span>
                 <h2 class="section-title">Courses Offered</h2>
-                <div class="title-separator"></div>
-                <p class="section-desc">Comprehensive coaching for all subjects across major academic boards.</p>
+                <div class="title-separator"><span class="sep-diamond"></span></div>
+                <p class="section-desc">Comprehensive coaching for all subjects across every major academic board.</p>
             </div>
-            
+
             <div class="boards-container fade-up">
                 <span class="board-badge">CBSE</span>
                 <span class="board-badge">ICSE</span>
@@ -165,23 +174,23 @@
 
             <div class="classrooms-bento mt-4 fade-up">
                 <!-- Dr Abdul Kalam Classroom -->
-                <div class="classroom-card bento-item">
+                <div class="classroom-card">
                     <h3 class="classroom-name">Dr. Abdul Kalam Classroom</h3>
-                    <p class="classroom-focus">Focus: Academic Excellence & Exam Readiness</p>
+                    <p class="classroom-focus">Focus: Academic Excellence &amp; Exam Readiness</p>
                     <ul class="classroom-features">
                         <li><i class="ph-fill ph-check-circle"></i> Direct Interactive Coaching</li>
                         <li><i class="ph-fill ph-check-circle"></i> Board Questions Practice</li>
                         <li><i class="ph-fill ph-check-circle"></i> Weekly Revision Tests</li>
                     </ul>
                 </div>
-                
+
                 <!-- MK Gandhi Classroom -->
-                <div class="classroom-card bento-item">
+                <div class="classroom-card">
                     <h3 class="classroom-name">M.K. Gandhi Classroom</h3>
-                    <p class="classroom-focus">Focus: Holistic Development & Confidence</p>
+                    <p class="classroom-focus">Focus: Holistic Development &amp; Confidence</p>
                     <ul class="classroom-features">
-                        <li><i class="ph-fill ph-check-circle"></i> Build Self Confidence</li>
-                        <li><i class="ph-fill ph-check-circle"></i> Celebrate Talents and Develop Skills</li>
+                        <li><i class="ph-fill ph-check-circle"></i> Build Self-Confidence</li>
+                        <li><i class="ph-fill ph-check-circle"></i> Celebrate Talents &amp; Develop Skills</li>
                         <li><i class="ph-fill ph-check-circle"></i> Self-Initiated Learning</li>
                     </ul>
                 </div>
@@ -189,53 +198,52 @@
         </div>
     </section>
 
-    <!-- Results Section -->
-    <section id="results" class="section results-section">
-        <div class="container fade-up">
-            <div class="results-banner">
-                <div class="results-content text-center">
-                    <h2 class="results-title">Proven Academic Results</h2>
-                    <h3 class="results-highlight">Students consistently improve from 60% to 85%+ under guided training.</h3>
-                    <div class="results-divider"></div>
-                    <blockquote class="motivational-quote">
-                        "Don't stop when you are tired. Stop when you are done."
-                    </blockquote>
-                </div>
+    <!-- ═══ RESULTS BANNER ═══ -->
+    <section id="results" class="results-section">
+        <div class="results-banner">
+            <div class="results-content text-center">
+                <p class="results-title">Proven Academic Results</p>
+                <h3 class="results-highlight">
+                    "Students consistently improve from 60% to 85%+ under our guided, structured training."
+                </h3>
+                <div class="results-divider"></div>
+                <blockquote class="motivational-quote">
+                    "Don't stop when you are tired. Stop when you are done."
+                </blockquote>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="section testimonials-section bg-light">
+    <!-- ═══ TESTIMONIALS ═══ -->
+    <section id="testimonials" class="section testimonials-section">
         <div class="container">
             <div class="section-header text-center fade-up">
+                <span class="section-eyebrow">Parent Voices</span>
                 <h2 class="section-title">What Parents Say</h2>
-                <div class="title-separator"></div>
+                <div class="title-separator"><span class="sep-diamond"></span></div>
             </div>
-            
+
             <div class="testimonials-grid">
-                <!-- Testimonial 1 -->
                 <div class="testimonial-card fade-up">
                     <div class="quote-icon"><i class="ph-fill ph-quotes"></i></div>
-                    <p class="testimonial-text">"The teaching approach is structured and effective. My child has shown significant improvement in a very short time."</p>
+                    <p class="testimonial-text">"The teaching approach is structured and remarkably effective. My child has shown significant improvement in a very short time."</p>
                     <div class="testimonial-author">
-                        <img src="https://i.pravatar.cc/100?img=5" alt="Parent Photo" class="author-img">
+                        <img src="https://i.pravatar.cc/100?img=5" alt="Mrs. Anjali S." class="author-img">
                         <div class="author-info">
                             <h4 class="author-name">Mrs. Anjali S.</h4>
-                            <span class="author-label">Parent of Class 10 Student</span>
+                            <span class="author-label">Parent of Class 10 Student · CBSE</span>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Testimonial 2 -->
-                <div class="testimonial-card fade-up" style="transition-delay: 100ms;">
+
+                <div class="testimonial-card fade-up" style="transition-delay:100ms;">
                     <div class="quote-icon"><i class="ph-fill ph-quotes"></i></div>
-                    <p class="testimonial-text">"NTC’s faculty gives individual attention which helped clear my son's doubts. The weekly revision tests are fantastic for board exam prep."</p>
+                    <p class="testimonial-text">"NTC's faculty gives individual attention that helped clear my son's doubts completely. The weekly revision tests are fantastic for board exam prep."</p>
                     <div class="testimonial-author">
-                        <img src="https://i.pravatar.cc/100?img=8" alt="Parent Photo" class="author-img">
+                        <img src="https://i.pravatar.cc/100?img=8" alt="Mr. Rajesh K." class="author-img">
                         <div class="author-info">
                             <h4 class="author-name">Mr. Rajesh K.</h4>
-                            <span class="author-label">Parent of Class 12 CBSE</span>
+                            <span class="author-label">Parent of Class 12 Student · CBSE</span>
                         </div>
                     </div>
                 </div>
@@ -243,12 +251,12 @@
         </div>
     </section>
 
-    <!-- Final CTA Section -->
+    <!-- ═══ FINAL CTA ═══ -->
     <section id="contact" class="section cta-section text-center">
         <div class="container fade-up">
-            <div class="cta-card glass-card">
-                <h2 class="cta-title">Begin Your Child’s Academic Journey with Confidence</h2>
-                <p class="cta-desc">Enroll now and give your child the right ambient environment to learn and succeed.</p>
+            <div class="cta-card">
+                <h2 class="cta-title">Begin Your Child's Academic Journey with Confidence</h2>
+                <p class="cta-desc">Enrol now and give your child the right ambient environment to learn and succeed.</p>
                 <div class="cta-actions">
                     <a href="mailto:info@niramtuitioncentre.com" class="btn btn-primary">Contact Us</a>
                     <a href="#" class="btn btn-secondary">Schedule a Visit</a>
@@ -257,14 +265,15 @@
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="section faq-section bg-light">
+    <!-- ═══ FAQ ═══ -->
+    <section class="section faq-section bg-alt">
         <div class="container max-w-narrow fade-up">
             <div class="section-header text-center">
+                <span class="section-eyebrow">Have Questions?</span>
                 <h2 class="section-title">Frequently Asked Questions</h2>
-                <div class="title-separator"></div>
+                <div class="title-separator"><span class="sep-diamond"></span></div>
             </div>
-            
+
             <div class="faq-accordion">
                 <div class="faq-item">
                     <button class="faq-question">What boards do you offer coaching for? <i class="ph ph-caret-down"></i></button>
@@ -275,36 +284,38 @@
                 <div class="faq-item">
                     <button class="faq-question">How are the classes structured? <i class="ph ph-caret-down"></i></button>
                     <div class="faq-answer">
-                        <p>Our classes emphasize direct interactive coaching. We focus on regular board question practice, weekly revision tests, and on-time syllabus completion to ensure students are well-prepared.</p>
+                        <p>Our classes emphasise direct interactive coaching with regular board question practice, weekly revision tests, and on-time syllabus completion — ensuring students are thoroughly prepared.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question">Do you offer demo classes? <i class="ph ph-caret-down"></i></button>
                     <div class="faq-answer">
-                        <p>Yes, we offer demo classes so that students and parents can experience our teaching methodology before enrolling.</p>
+                        <p>Yes, we offer demo classes so that students and parents can experience our teaching methodology firsthand before enrolling.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- ═══ FOOTER ═══ -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col brand-col">
                     <div class="logo">
                         <i class="ph ph-books logo-icon"></i>
-                        <span class="logo-title">Niram Tuition Centre</span>
+                        <div class="logo-text">
+                            <span class="logo-title">Niram Tuition Centre</span>
+                        </div>
                     </div>
-                    <p class="footer-moto">"Teaching is Inspiring and Learning is Understanding"</p>
-                    <div class="social-links mt-2">
+                    <p class="footer-moto">"Teaching is Inspiring<br>and Learning is Understanding"</p>
+                    <div class="social-links">
                         <a href="#" aria-label="Facebook"><i class="ph-fill ph-facebook-logo"></i></a>
                         <a href="#" aria-label="Instagram"><i class="ph-fill ph-instagram-logo"></i></a>
                         <a href="#" aria-label="YouTube"><i class="ph-fill ph-youtube-logo"></i></a>
                     </div>
                 </div>
-                
+
                 <div class="footer-col">
                     <h4 class="footer-heading">Quick Links</h4>
                     <ul class="footer-links">
@@ -314,7 +325,7 @@
                         <li><a href="#testimonials">Testimonials</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-col">
                     <h4 class="footer-heading">Contact Us</h4>
                     <ul class="footer-contact">
@@ -324,14 +335,14 @@
                     </ul>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
                 <p>&copy; 2026 Niram Tuition Centre. All rights reserved.</p>
-                <div class="footer-watermark">Developed with Academic Excellence</div>
+                <div class="footer-watermark">Crafted with Academic Excellence</div>
             </div>
         </div>
-        
-        <!-- Floating WhatsApp Button -->
+
+        <!-- Floating WhatsApp -->
         <a href="https://wa.me/919000000000" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
             <i class="ph-fill ph-whatsapp-logo"></i>
         </a>
