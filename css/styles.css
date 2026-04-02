@@ -989,15 +989,7 @@ img {
     pointer-events: none;
 }
 
-.results-banner::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(to right, transparent, #00C2FF, #0086B3, transparent);
-}
+
 
 .results-content {
     position: relative;
