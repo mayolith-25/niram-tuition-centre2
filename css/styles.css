@@ -1561,16 +1561,41 @@ img {
         background: rgba(15, 30, 63, 0.98);
         border-top: 1px solid rgba(0, 194, 255, 0.28);
         padding: 1.5rem;
-        display: none;
+        /* Always rendered but hidden via clip-path for smooth animation */
+        display: block;
+        clip-path: circle(0% at calc(100% - 2.5rem) 0%);
+        transition: clip-path 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+        pointer-events: none;
     }
 
     .nav-links.active {
-        display: block;
+        clip-path: circle(150% at calc(100% - 2.5rem) 0%);
+        pointer-events: auto;
     }
 
     .nav-list {
         flex-direction: column;
         gap: 1.25rem;
+    }
+
+    /* Stagger fade-in for each nav link */
+    .nav-links.active .nav-list li {
+        opacity: 0;
+        transform: translateX(20px);
+        animation: navLinkSlideIn 0.4s ease forwards;
+    }
+
+    .nav-links.active .nav-list li:nth-child(1) { animation-delay: 0.25s; }
+    .nav-links.active .nav-list li:nth-child(2) { animation-delay: 0.33s; }
+    .nav-links.active .nav-list li:nth-child(3) { animation-delay: 0.41s; }
+    .nav-links.active .nav-list li:nth-child(4) { animation-delay: 0.49s; }
+    .nav-links.active .nav-list li:nth-child(5) { animation-delay: 0.57s; }
+
+    @keyframes navLinkSlideIn {
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
     }
 
     .hero-actions {
