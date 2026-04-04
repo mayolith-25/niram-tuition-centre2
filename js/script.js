@@ -93,10 +93,10 @@ document.addEventListener("DOMContentLoaded", function() {
         '.btn-primary, .btn-secondary, .btn-outline, .nav-list a, .stat-item, .feature-card, .board-badge, .btn, .classroom-card, .testimonial-card, .faq-item, .faq-question, .social-links a, .footer-links a, .whatsapp-float'
     );
     
-    // Target the middle 30% of the viewport
+    // Target the absolute middle 10% of the viewport to prevent multiple simultaneous hovers
     const centerObserverOptions = {
         root: null,
-        rootMargin: '-35% 0px -35% 0px', 
+        rootMargin: '-45% 0px -45% 0px', 
         threshold: 0
     };
 
