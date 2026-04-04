@@ -1598,4 +1598,24 @@ img {
         height: 24px;
         margin: 1.5rem auto;
     }
+
+    .brand-col .logo-icon {
+        font-size: 2.8rem;
+    }
+
+    .brand-col .logo-title {
+        font-size: 1.6rem;
+    }
+
+    .footer-moto {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        margin-top: 0.75rem;
+    }
+
+    .social-links a {
+        width: 46px;
+        height: 46px;
+        font-size: 1.3rem;
+    }
 }
