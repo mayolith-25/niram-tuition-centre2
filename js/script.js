@@ -88,4 +88,37 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
+    // 5. Mobile Center-Screen Hover Effect
+    const hoverableElements = document.querySelectorAll(
+        '.btn-primary, .btn-secondary, .btn-outline, .nav-list a, .stat-item, .feature-card, .board-badge, .btn, .classroom-card, .testimonial-card, .faq-item, .faq-question, .social-links a, .footer-links a, .whatsapp-float'
+    );
+    
+    // Target the middle 30% of the viewport
+    const centerObserverOptions = {
+        root: null,
+        rootMargin: '-35% 0px -35% 0px', 
+        threshold: 0
+    };
+
+    const centerObserver = new IntersectionObserver((entries) => {
+        if (window.innerWidth <= 767) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('mobile-hover');
+                } else {
+                    entry.target.classList.remove('mobile-hover');
+                }
+            });
+        }
+    }, centerObserverOptions);
+
+    hoverableElements.forEach(el => centerObserver.observe(el));
+
+    // Cleanup hover states if window is resized above mobile breakpoint
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 767) {
+            document.querySelectorAll('.mobile-hover').forEach(el => el.classList.remove('mobile-hover'));
+        }
+    });
+
 });
