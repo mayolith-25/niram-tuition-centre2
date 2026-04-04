@@ -135,7 +135,7 @@ img {
 }
 
 .section {
-    padding: var(--section-py) 2rem;
+    padding: var(--section-py) 0;
     position: relative;
 }
 
@@ -1510,6 +1510,41 @@ img {
 @media (max-width: 767px) {
     :root {
         --section-py: 4rem;
+    }
+
+    .container {
+        padding-inline: 1.25rem;
+    }
+
+    .hero-title {
+        font-size: clamp(2.5rem, 8vw, 3.5rem);
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: clamp(1.8rem, 8vw, 2.2rem);
+    }
+    
+    .hero-trust {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .stat-item {
+        padding: 2rem 1rem;
+    }
+
+    .stat-number {
+        font-size: 2.2rem;
     }
 
     .nav-links {
