@@ -1589,4 +1589,13 @@ img {
     .classroom-card {
         padding: 2rem;
     }
+
+    .results-banner {
+        padding: 3rem 1.25rem;
+    }
+
+    .results-divider {
+        height: 24px;
+        margin: 1.5rem auto;
+    }
 }
