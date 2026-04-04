@@ -1510,7 +1510,12 @@ img {
 
 @media (max-width: 767px) {
     :root {
-        --section-py: 4rem;
+        --section-py: 6.5rem;
+    }
+
+    .section-wave-bottom svg,
+    .section-wave-top svg {
+        height: 55px;
     }
 
     .container {
